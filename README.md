@@ -65,3 +65,7 @@ Press "1" again to restart the watering countdown.
 
 
 ![raw porject](https://github.com/user-attachments/assets/b88eb91a-0dc8-413b-9f71-ce70581c4291)  
+
+
+## Reference
+A Brief Look at How Water Affects Plant Growth - https://swanhose.com/blogs/general-watering/how-does-water-its-amount-its-quality-affect-plant-growth
