@@ -1,6 +1,11 @@
 # CASA0014-Connected-Environments-Chrono-Lumina  
 
-![project with decoration](https://github.com/user-attachments/assets/c0ee0448-078c-48fe-8a47-21e9b7773e72)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Overall%20project.jpg" alt="Project 1" style="width: 220px; height: auto;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/chrono%20Lumina.jpg" alt="Project 2" style="width: 220px; height: auto;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/test%20with%20the%20plant.jpg" alt="Project 2" style="width: 220px; height: auto;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/soil%20moisture%20detection.png" alt="Project 3" style="width: 220px; height: auto;">
+</div>
 
 ## Project Overview
 I created a device using the Arduino MKR WiFi 1010, a 4x4 keypad, and a soil moisture sensor to help users visualize plant watering schedules and verify soil hydration after watering. The device processes watering intervals and soil moisture data, transmits it via MQTT, and uses Neopixels to display real-time status through various colors.  
@@ -16,33 +21,66 @@ In our CE lab, there are varieties of plants. This device can also contribute to
 
 ## Detailed Instructions
 ### 1. Enter Watering Schedule Selection Mode
-Press the "*" button on the keypad to enter the schedule selection mode. The Neopixels will glow yellow. There are three available schedules to choose from:  
+Press the "*" button on the keypad to enter the schedule selection mode. The Neopixels will glow yellow.   
+
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/enter%20the%20cycle%20selection%20mode%20(yellow%20LED).jpg"  alt="yellow" style="width: 220px; height: auto;">
+
+There are three available schedules to choose from:  
 7 days (test mode: 1 minute)  
 15 days (test mode: 15 minutes)  
-30 days (test mode: 30 minutes)  
+30 days (test mode: 30 minutes) 
+
+**NOTICE: The uploaded final code and display images are under the test mode.**
 
 ### 2. Select a Schedule
 Press "A" for a 7-day interval (Neopixels blink pink).  
 Press "B" for a 15-day interval (Neopixels blink white).  
 Press "C" for a 30-day interval (Neopixels blink orange).  
 
+<div style="display: flex;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 1" style="width: 220px; height: auto; margin-right: 30px;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 2" style="width: 220px; height: auto; margin-right: 30px;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 3" style="width: 220px; height: auto;">
+</div>
+
 ### 3. Confirm Your Choice
 Press "#" to confirm your selected schedule.
 If no selection is confirmed within 10 seconds, the device exits selection mode and returns to standby, where all Neopixels glow blue.
 
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Initial%20mode%20(blue%20LED).jpg"  alt="blue" style="width: 220px; height: auto;">
+
+
 ### 4.Begin Countdown
-Once a schedule is confirmed, the device starts the countdown, with all Neopixels glowing green, indicating a freshly watered and moist state.
+Once a schedule is confirmed, the device starts the countdown, with all Neopixels turning green, indicating a freshly watered and moist state.
+
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/confirm%20cycle%20(green%20LED).jpg"  alt="green" style="width: 220px; height: auto;">
 
 ### 5. Visualize Time Passing
 As time progresses, the green lights gradually turn yellow. When the countdown ends, all Neopixels will blink red, indicating the plant needs watering.
 
+<div style="display: flex; justify-content: space-between;">
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/coutdown%20light%20(green%20to%20yellow).gif" alt="green to yellow" style="width: 220px; height: 300px;">
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/countdown%20end%20or%20lack%20of%20water%20(red%20LED).jpg"  alt="red" style="width: 220px; height: auto;">
+</div>
+
 ### 6. Water the Plant and Check Moisture
 After watering, press "1" to signal the device. The soil moisture sensor evaluates the hydration level:  
 If the soil is insufficiently moist (e.g., below 60%), the Neopixels blink red, and the device cannot be reset to the countdown mode.  
+<div style="display: flex; justify-content: space-between;">
+
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/serial%20output/Inadequate%20watering.png"  alt="inadequate water" style="width: 280px; height: 300px">
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/red%20flash.gif" alt="red flash" style="width: 220px; height: 300px;">
+
+</div>
+
 If the soil is adequately moist, the Neopixels blink green, and the device resets to begin a new countdown cycle.
 
-### 7. Restart the Countdown
-Press "1" again to restart the watering countdown.
+<div style="display: flex; justify-content: space-between;">
+
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/serial%20output/enough%20water%2C%20repeat%20the%20countdown.png"  alt="adequate water" style="width: 350px; height: 300px">
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/green%20falsh.gif" alt="green flash" style="width: 220px; height: 300px;">
+
+</div>
 
 ## Equipment
 1. Arduino MKR WiFi 1010  
@@ -53,19 +91,19 @@ Press "1" again to restart the watering countdown.
 ## Architecture
 ### Circuit diagram
 
-
-![circuit diagram](https://github.com/user-attachments/assets/3e81effb-f321-407d-a50a-fb61f82e14b9)  
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/circuit%20diagram.jpg" alt="circuit diagram" style="width: 400px; height: auto;">
 
 ### Data flowing
 
-
-![data transport](https://github.com/user-attachments/assets/cf59796d-1a03-4c27-9256-0e71488b7773)  
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/data%20transport.png" alt="data transport" style="width: 600px; height: auto;">
 
 ### Physical picture display
 
-
-![raw porject](https://github.com/user-attachments/assets/b88eb91a-0dc8-413b-9f71-ce70581c4291)  
+<img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/raw%20porject.jpg" alt="physical device" style="width: 300px; height: auto;">
 
 
 ## Reference
-A Brief Look at How Water Affects Plant Growth - https://swanhose.com/blogs/general-watering/how-does-water-its-amount-its-quality-affect-plant-growth
+1. A Brief Look at How Water Affects Plant Growth - https://swanhose.com/blogs/general-watering/how-does-water-its-amount-its-quality-affect-plant-growth  
+2. Get scientific watering methods and cycles here - https://gilmour.com/watering-flowers-how-to  
+3. Learn about the dangers of overwatering here - https://www.missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/insects-pests-and-problems/environmental/overwatering
+
