@@ -38,8 +38,8 @@ Press "B" for a 15-day interval (Neopixels blink white).
 Press "C" for a 30-day interval (Neopixels blink orange).  
 
 <div style="display: flex;">
-  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 1" style="width: 220px; height: auto; margin-right: 30px;">
-  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 2" style="width: 220px; height: auto; margin-right: 30px;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/pink.jpg" alt="Cycle 1" style="width: 220px; height: 290px; margin-right: 30px;">
+  <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/white.jpg" alt="Cycle 2" style="width: 220px; height: 290px; margin-right: 30px;">
   <img src="https://github.com/hml1688/CASA0014-Connected-Environments-Chrono-Lumina/blob/main/pictures/Cycle%203%20(orange%20LED).jpg" alt="Cycle 3" style="width: 220px; height: auto;">
 </div>
 
